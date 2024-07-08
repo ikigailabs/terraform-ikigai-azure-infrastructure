@@ -1,0 +1,1 @@
+# Ikigai Elasticsearch Infrastructure
