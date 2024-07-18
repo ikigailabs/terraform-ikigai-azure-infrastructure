@@ -10,13 +10,13 @@ variable "private_subnet_id" {
 }
 
 variable "cosmosdb_account_name" {
-  description = "Name of the ikigai cosmosDB account"
+  description = "Name of the Ikigai cosmosDB account"
   type        = string
   default     = "ikigai-cosmosdb"
 }
 
 variable "cosmosdb_consistency_level" {
-  description = "Consistency policy of the ikigai cosmosDB account"
+  description = "Consistency policy of the Ikigai cosmosDB account"
   type        = string
   default     = "Eventual"
 }

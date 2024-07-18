@@ -21,11 +21,6 @@ resource "azurerm_storage_account" "development_storage_account" {
 }
 
 # Creating azure storage containers
-resource "azurerm_storage_container" "anyscale_logs" {
-  name                  = var.anyscale_logs_container_name
-  storage_account_name  = azurerm_storage_account.development_storage_account.name
-}
-
 resource "azurerm_storage_container" "ikigai_cold_storage_dev" {
   name                  = var.cold_storage_container_name
   storage_account_name  = azurerm_storage_account.development_storage_account.name

@@ -1,1 +1,0 @@
-# Ikigai B2C Infrastructure

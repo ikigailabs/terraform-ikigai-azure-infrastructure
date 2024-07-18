@@ -10,27 +10,21 @@ variable "private_subnet_id" {
 }
 
 variable "storage_account_name" {
-  description = "Name of the ikigai blob storage account"
+  description = "Name of the Ikigai blob storage account"
   type        = string
   default     = "ikigaistorage"
 }
 
 variable "storage_account_tier" {
-  description = "Tier of the ikigai blob storage account"
+  description = "Tier of the Ikigai blob storage account"
   type        = string
   default     = "Standard"
 }
 
 variable "storage_account_replication_type" {
-  description = "Replication type of the ikigai blob storage account"
+  description = "Replication type of the Ikigai blob storage account"
   type        = string
   default     = "ZRS"
-}
-
-variable "anyscale_logs_container_name" {
-  description = "Name of the container for anyscale logs"
-  type        = string
-  default     = "ikigai-anyscale"
 }
 
 variable "cold_storage_container_name" {
@@ -58,7 +52,7 @@ variable "dataset_container_name" {
 }
 
 variable "models_container_name" {
-  description = "Name of the container for ikigai models"
+  description = "Name of the container for Ikigai models"
   type        = string
   default     = "ikigai-models"
 }

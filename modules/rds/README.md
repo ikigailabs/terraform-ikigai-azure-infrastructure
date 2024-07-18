@@ -1,1 +1,0 @@
-# Ikigai RDS Infrastructure

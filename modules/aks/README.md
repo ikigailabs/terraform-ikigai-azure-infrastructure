@@ -1,1 +1,0 @@
-# Ikigai AKS Infrastucture

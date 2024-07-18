@@ -7,13 +7,13 @@ variable "resource_group_name" {
 variable "component_logs_elasticsearch_name" {
   type        = string
   description = "Name of Ikigai component logs elasticsearch instance"
-  default     = "component-logs-elasticsearch"
+  default     = "component-logs-ikigai"
 }
 
 variable "monitor_elasticsearch_name" {
   type        = string
   description = "Name of Ikigai monitoring elasticsearch instance"
-  default     = "monitor-elasticsearch"
+  default     = "monitor-ikigai"
 }
 
 variable "component_logs_elasticsearch_sku" {

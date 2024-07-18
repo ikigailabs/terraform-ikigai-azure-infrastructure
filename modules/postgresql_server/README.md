@@ -1,20 +1,34 @@
-# Ikigai Azure CosmosDB Terraform Module
+# Ikigai Azure PostgreSQL Server Terraform Module
 
-This module deploys the Azure CosmosDB infrastructure required for an Ikigai application setup.
+This module deploys the Azure PostgreSQL Server infrastructure required for an Ikigai application setup.
 
 ## Usage
 
-To use the CosmosDB module, the id of a private subnet is needed as input. Pass it in using a data source that links to this subnet.
+To use the PostgreSQL Server module, the id of an existing subnet dedicated to hosting database servers is needed as input. Pass it in using a data source that links to this subnet.
 
-This is a simple example usage of the CosmosDB module, only setting the required inputs:
+This is a simple example usage of the PostgreSQL Server module, only setting the required inputs:
 
 ```hcl
-module "azure-infrastructure_cosmos_db" {
-  source  = "ikigailabs/azure-infrastructure/ikigai//modules/cosmos_db"
+module "azure-infrastructure_rds" {
+  source  = "ikigailabs/azure-infrastructure/ikigai//modules/rds"
   version = "~>1.0"
   
-  cosmosdb_replication_region = "REQUIRED_REPLICATION_REGION"
-  private_subnet_id           = data.azurerm_subnet.private_subnet.id
+  virtual_network_id = data.azurerm_virtual_network.ikigai_vnet.id
+  database_subnet_id = data.azurerm_subnet.database_subnet.id
+  airbyte_server_password = "REQUIRED_PASSWORD"
+  airbyte_server_username = "REQUIRED_USERNAME"
+  dashhub_server_password = "REQUIRED_PASSWORD"
+  dashhub_server_username = "REQUIRED_USERNAME"
+  database_storage_server_password = "REQUIRED_PASSWORD"
+  database_storage_server_username = "REQUIRED_USERNAME"
+  jupyterhub_server_password = "REQUIRED_PASSWORD"
+  jupyterhub_server_username = "REQUIRED_USERNAME"
+  pipeline_staging_server_password = "REQUIRED_PASSWORD"
+  pipeline_staging_server_username = "REQUIRED_USERNAME"
+  service_metadata_server_password = "REQUIRED_PASSWORD"
+  service_metadata_server_username = "REQUIRED_USERNAME"
+  superset_server_password = "REQUIRED_PASSWORD"
+  superset_server_username = "REQUIRED_USERNAME"
 }
 ```
 
