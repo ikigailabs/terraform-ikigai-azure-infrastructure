@@ -6,7 +6,7 @@ terraform {
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = "=2.51.1"
+      version = "=2.53.1"
     }
   }
 }
@@ -14,8 +14,6 @@ terraform {
 provider "azurerm" {
   features {}
 }
-
-provider "azuread" {}
 
 data "azuread_service_principal" "app_gateway_service_principal" {
   display_name = var.service_principal_name
