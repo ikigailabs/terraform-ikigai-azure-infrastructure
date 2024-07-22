@@ -24,6 +24,7 @@ resource "azurerm_subnet" "database_subnet" {
     name = "postgresql_server_delegation"
 
     service_delegation {
+      actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
       name = "Microsoft.DBforPostgreSQL/flexibleServers"
     }
   }

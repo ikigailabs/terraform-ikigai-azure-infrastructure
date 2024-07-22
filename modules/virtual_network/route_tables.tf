@@ -2,7 +2,7 @@ resource "azurerm_route_table" "igw_rtb" {
   name                          = var.route_table_name
   location                      = azurerm_resource_group.ikigai_rg.location
   resource_group_name           = azurerm_resource_group.ikigai_rg.name
-  disable_bgp_route_propagation = false
+  bgp_route_propagation_enabled = true
 
   route {
     name           = "local"
