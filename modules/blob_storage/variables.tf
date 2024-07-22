@@ -4,6 +4,12 @@ variable "resource_group_name" {
   default     = "ikigai-resource-group"
 }
 
+variable "service_principal_name" {
+  description = "Name of the service principal used to authenticate blob storage with kubernetes"
+  type        = string
+  default     = "ikigai-service-principal"
+}
+
 variable "private_subnet_id" {
   description = "ID of the private subnet linked to the storage instances"
   type        = string

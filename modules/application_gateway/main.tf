@@ -5,7 +5,7 @@ provider "azurerm" {
 provider "azuread" {}
 
 data "azuread_service_principal" "app_gateway_service_principal" {
-  display_name = "azure-cli-2024-02-09-23-07-50"
+  display_name = var.service_principal_name
 }
 
 data "azurerm_resource_group" "ikigai_rg" {

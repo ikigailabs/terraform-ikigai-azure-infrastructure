@@ -47,6 +47,7 @@ For example, to set the `frontend_gateway_name` input to `my_gateway`, add `fron
 | ingress_gateway_public_ip_name | Name of the public IP for the ingress application gateway | `string` | `"ingress-public-ip"` | no |
 | ingress_gateway_sku_name |  SKU name of the ingress application gateway | `string` | `"Standard_v2"` | no |
 | ingress_gateway_sku_tier | SKU tier of the ingress application gateway | `string` | `"Standard_v2"` | no |
+| service_principal_name | Name of the service principal used to authenticate application gateways with kubernetes | `string` | `"ikigai-service-principal"` | no |
 
 ## Outputs
 

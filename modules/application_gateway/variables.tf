@@ -4,10 +4,10 @@ variable "resource_group_name" {
   default     = "ikigai-resource-group"
 }
 
-variable "application_gateway_service_principal_name" {
+variable "service_principal_name" {
   description = "Name of the service principal used to authenticate application gateways with kubernetes"
-  type        = "string"
-  default     = "ikigai_application_gateway_service_principal"
+  type        = string
+  default     = "ikigai-service-principal"
 }
 
 variable "application_gateway_subnet_id" {
