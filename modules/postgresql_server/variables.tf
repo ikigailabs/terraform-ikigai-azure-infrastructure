@@ -17,7 +17,7 @@ variable "database_subnet_id" {
 variable "airbyte_server_hostname" {
   description = "DNS hostname of the airbyte postgres server"
   type        = string
-  default     = "airbyte.development.postgres.database.azure.com"
+  default     = "airbyte.ikigai.postgres.database.azure.com"
 }
 
 variable "airbyte_server_dns_vnet_link_name" {
@@ -87,7 +87,7 @@ variable "airbyte_database_collation" {
 variable "dashhub_server_hostname" {
   description = "DNS hostname of the dashhub postgres server"
   type        = string
-  default     = "dashhub.development.postgres.database.azure.com"
+  default     = "dashhub.ikigai.postgres.database.azure.com"
 }
 
 variable "dashhub_server_dns_vnet_link_name" {
@@ -157,7 +157,7 @@ variable "dashhub_database_collation" {
 variable "database_storage_server_hostname" {
   description = "DNS hostname of the database_storage postgres server"
   type        = string
-  default     = "databasestorage.development.postgres.database.azure.com"
+  default     = "databasestorage.ikigai.postgres.database.azure.com"
 }
 
 variable "database_storage_server_dns_vnet_link_name" {
@@ -227,7 +227,7 @@ variable "database_storage_database_collation" {
 variable "jupyterhub_server_hostname" {
   description = "DNS hostname of the jupyterhub postgres server"
   type        = string
-  default     = "jupyterhub.development.postgres.database.azure.com"
+  default     = "jupyterhub.ikigai.postgres.database.azure.com"
 }
 
 variable "jupyterhub_server_dns_vnet_link_name" {
@@ -297,7 +297,7 @@ variable "jupyterhub_database_collation" {
 variable "pipeline_staging_server_hostname" {
   description = "DNS hostname of the pipeline_staging postgres server"
   type        = string
-  default     = "pipelinestaging.development.postgres.database.azure.com"
+  default     = "pipelinestaging.ikigai.postgres.database.azure.com"
 }
 
 variable "pipeline_staging_server_dns_vnet_link_name" {
@@ -367,7 +367,7 @@ variable "pipeline_staging_database_collation" {
 variable "service_metadata_server_hostname" {
   description = "DNS hostname of the service_metadata postgres server"
   type        = string
-  default     = "servicemetadata.development.postgres.database.azure.com"
+  default     = "servicemetadata.ikigai.postgres.database.azure.com"
 }
 
 variable "service_metadata_server_dns_vnet_link_name" {
@@ -437,7 +437,7 @@ variable "service_metadata_database_collation" {
 variable "superset_server_hostname" {
   description = "DNS hostname of the superset postgres server"
   type        = string
-  default     = "superset.development.postgres.database.azure.com"
+  default     = "superset.ikigai.postgres.database.azure.com"
 }
 
 variable "superset_server_dns_vnet_link_name" {
