@@ -31,4 +31,7 @@ resource "azurerm_application_insights" "ikigai_insight" {
   resource_group_name = data.azurerm_resource_group.development_rg.name
   workspace_id        = azurerm_log_analytics_workspace.ikigai_workspace.id
   application_type    = var.application_insights_type
+  tags = {
+    "tag1" = "1tag"
+  }
 }
