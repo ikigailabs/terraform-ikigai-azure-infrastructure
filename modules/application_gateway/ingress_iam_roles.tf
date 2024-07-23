@@ -1,15 +1,6 @@
-resource "azurerm_role_definition" "ingress_public_ip_reader" {
-  name        = var.ingress_gateway_ip_reader_role_name
-  scope       = azurerm_public_ip.ingress_public_ip.id
-
-  permissions {
-    actions = ["*/read"]
-  }
-}
-
 resource "azurerm_role_assignment" "ingress_public_ip_reader_assignment" {
   scope              = azurerm_public_ip.ingress_public_ip.id
-  role_definition_id = azurerm_role_definition.ingress_public_ip_reader.role_definition_resource_id
+  role_definition_id = "Reader"
   principal_id       = data.azuread_service_principal.app_gateway_service_principal.object_id
 }
 
