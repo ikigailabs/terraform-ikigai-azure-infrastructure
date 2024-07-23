@@ -28,6 +28,8 @@ resource "azurerm_subnet" "database_subnet" {
       name = "Microsoft.DBforPostgreSQL/flexibleServers"
     }
   }
+
+  service_endpoints = ["Microsoft.Storage"]
 }
 
 resource "azurerm_subnet" "application_gateway_subnet" {
