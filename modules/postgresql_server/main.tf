@@ -40,6 +40,7 @@ resource "azurerm_postgresql_flexible_server" "airbyte-postgresql-server" {
   administrator_password = var.airbyte_server_password
   zone                   = var.airbyte_server_zone
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-airbyte.id
+  public_network_access_enabled = false
 
   #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.airbyte_storage_capacity
@@ -79,6 +80,7 @@ resource "azurerm_postgresql_flexible_server" "dashhub-postgresql-server" {
   administrator_password = var.dashhub_server_password
   zone                   = var.dashhub_server_zone
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-dashhub.id
+  public_network_access_enabled = false
 
   #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.dashhub_storage_capacity
@@ -118,6 +120,7 @@ resource "azurerm_postgresql_flexible_server" "database-storage-postgresql-serve
   administrator_password = var.database_storage_server_password
   zone                   = var.database_storage_server_zone
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-database-storage.id
+  public_network_access_enabled = false
 
   #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.database_storage_storage_capacity
@@ -158,6 +161,7 @@ resource "azurerm_postgresql_flexible_server" "jupyterhub-postgresql-server" {
   administrator_password = var.jupyterhub_server_password
   zone                   = var.jupyterhub_server_zone
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-jupyterhub.id
+  public_network_access_enabled = false
 
   #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.jupyterhub_storage_capacity
@@ -198,6 +202,7 @@ resource "azurerm_postgresql_flexible_server" "pipeline-staging-postgresql-serve
   administrator_password = var.pipeline_staging_server_password
   zone                   = var.pipeline_staging_server_zone
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-pipeline-staging.id
+  public_network_access_enabled = false
 
   #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.pipeline_staging_storage_capacity
@@ -238,6 +243,7 @@ resource "azurerm_postgresql_flexible_server" "service-metadata-development-post
   administrator_password = var.service_metadata_server_password
   zone                   = var.service_metadata_server_zone
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-service-metadata.id
+  public_network_access_enabled = false
 
   #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.service_metadata_storage_capacity
@@ -278,6 +284,7 @@ resource "azurerm_postgresql_flexible_server" "superset-development-postgresql-s
   administrator_password = var.superset_server_password
   zone                   = var.superset_server_zone
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-superset.id
+  public_network_access_enabled = false
 
   #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.superset_storage_capacity
