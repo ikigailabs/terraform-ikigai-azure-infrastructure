@@ -12,6 +12,6 @@ resource "azurerm_role_assignment" "ingress_app_gateway_contributor_assignment" 
 
 resource "azurerm_role_assignment" "ingress_app_gateway_identity_operator_assignment" {
   scope              = azurerm_user_assigned_identity.ingress_app_gateway_managed_identity.id
-  role_definition_id = "Managed Identity Operator"
+  role_definition_name = "Managed Identity Operator"
   principal_id       = data.azuread_service_principal.app_gateway_service_principal.object_id
 }
