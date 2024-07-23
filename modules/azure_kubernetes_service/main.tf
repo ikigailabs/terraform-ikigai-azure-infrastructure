@@ -43,6 +43,8 @@ resource "azurerm_kubernetes_cluster" "ikigai_cluster" {
     network_policy = var.kubernetes_cluster_network_policy
     load_balancer_sku  = "standard"
     outbound_type = "userAssignedNATGateway"
+
+    dns_service_ip = var.kubernetes_cluster_dns_service_ip
     service_cidr = var.kubernetes_cluster_service_cidr
   }
 

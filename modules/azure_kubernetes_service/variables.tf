@@ -21,6 +21,12 @@ variable "kubernetes_cluster_dns_prefix" {
   default     = "ikigai"
 }
 
+variable "kubernetes_cluster_dns_service_ip" {
+  description = "DNS service IP of the ikigai azure kubernetes cluster"
+  type        = string
+  default     = "10.1.0.10"
+}
+
 variable "kubernetes_cluster_network_plugin" {
   description = "Network plugin of the ikigai azure kubernetes cluster"
   type        = string

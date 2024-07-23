@@ -31,6 +31,7 @@ For example, to set the `kubernetes_cluster_name` input to `my-cluster`, add `ku
 | default_node_pool_node_count | Node count of the default node pool in the cluster | `number` | `1` | no |
 | default_node_pool_vm_size | VM size of the default node pool | `string` | `"standard_d2_v2"` | no |
 | kubernetes_cluster_dns_prefix | DNS prefix of the ikigai azure kubernetes cluster | `string` | `"ikigai"` | no |
+| kubernetes_cluster_dns_service_ip | DNS service IP of the ikigai azure kubernetes cluster | `string` | `"10.1.0.10"` | no |
 | kubernetes_cluster_name | Name of the ikigai azure kubernetes cluster | `string` | `"ikigai-aks-cluster"` | no |
 | kubernetes_cluster_network_plugin | Network plugin of the ikigai azure kubernetes cluster | `string` | `"azure"` | no |
 | kubernetes_cluster_network_policy | Network policy of the ikigai azure kubernetes cluster | `string` | `"azure"` | no |
