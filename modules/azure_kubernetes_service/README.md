@@ -34,6 +34,7 @@ For example, to set the `kubernetes_cluster_name` input to `my-cluster`, add `ku
 | kubernetes_cluster_name | Name of the ikigai azure kubernetes cluster | `string` | `"ikigai-aks-cluster"` | no |
 | kubernetes_cluster_network_plugin | Network plugin of the ikigai azure kubernetes cluster | `string` | `"azure"` | no |
 | kubernetes_cluster_network_policy | Network policy of the ikigai azure kubernetes cluster | `string` | `"azure"` | no |
+| kubernetes_cluster_service_cidr | Service CIDR of the azure kubernetes cluster | `string` | `"10.1.0.0/16"` | no |
 | pipeline_node_pool_name |  Name of the pipeline node pool | `string` | `"pipeline"` | no |
 | pipeline_node_pool_node_count | Node count of the pipeline node pool | `number` | `2` | no |
 | pipeline_node_pool_vm_size | VM size of the pipeline node pool | `string` | `"standard_d4_v5"` | no |

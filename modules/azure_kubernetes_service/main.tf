@@ -43,6 +43,7 @@ resource "azurerm_kubernetes_cluster" "ikigai_cluster" {
     network_policy = var.kubernetes_cluster_network_policy
     load_balancer_sku  = "standard"
     outbound_type = "userAssignedNATGateway"
+    service_cidr = var.kubernetes_cluster_service_cidr
   }
 
   default_node_pool {

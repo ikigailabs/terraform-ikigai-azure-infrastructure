@@ -33,6 +33,12 @@ variable "kubernetes_cluster_network_policy" {
   default     = "azure"
 }
 
+variable "kubernetes_cluster_service_cidr" {
+  description = "Service CIDR of the azure kubernetes cluster"
+  type        = string
+  default     = "10.1.0.0/16"
+}
+
 variable "default_node_pool_name" {
   description = "Name of the default node pool"
   type        = string
