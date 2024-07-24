@@ -379,7 +379,7 @@ variable "service_metadata_server_dns_vnet_link_name" {
 variable "service_metadata_server_name" {
   description = "Name of the service_metadata postgres server"
   type        = string
-  default     = "database-storage-ikigai"
+  default     = "service-metadata-ikigai"
 }
 
 variable "service_metadata_server_postgres_version" {
@@ -419,7 +419,7 @@ variable "service_metadata_sku_name" {
 variable "service_metadata_database_name" {
   description = "Name of the database of the service_metadata postgres server"
   type        = string
-  default     = "database-storage-db"
+  default     = "service-metadata-db"
 }
 
 variable "service_metadata_database_charset" {
