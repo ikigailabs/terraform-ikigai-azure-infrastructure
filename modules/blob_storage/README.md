@@ -4,7 +4,7 @@ This module deploys the Azure Blob Storage infrastructure required for an Ikigai
 
 ## Usage
 
-To use the AKS module, the id of a private subnet is needed as input. Pass it in using a data source that links to this subnet.
+To use the Blob Storage module, the id of a private subnet is needed as input. Pass it in using a data source that links to this subnet.
 
 This is a simple example usage of the Blob Storage module, only setting the required inputs:
 
