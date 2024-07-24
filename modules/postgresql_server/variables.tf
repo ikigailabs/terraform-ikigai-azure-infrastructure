@@ -309,7 +309,7 @@ variable "pipeline_staging_server_dns_vnet_link_name" {
 variable "pipeline_staging_server_name" {
   description = "Name of the pipeline_staging postgres server"
   type        = string
-  default     = "database-storage-ikigai"
+  default     = "pipeline-staging-ikigai"
 }
 
 variable "pipeline_staging_server_postgres_version" {
@@ -349,7 +349,7 @@ variable "pipeline_staging_sku_name" {
 variable "pipeline_staging_database_name" {
   description = "Name of the database of the pipeline_staging postgres server"
   type        = string
-  default     = "database-storage-db"
+  default     = "pipeline-staging-db"
 }
 
 variable "pipeline_staging_database_charset" {
