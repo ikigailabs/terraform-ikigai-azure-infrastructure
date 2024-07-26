@@ -108,3 +108,21 @@ variable "pipeline_node_pool_vm_size" {
   type        = string
   default     = "standard_d4_v5"
 }
+
+variable "dremio_node_pool_name" {
+  description = "Name of the pipeline node pool"
+  type        = string
+  default     = "dremio"
+}
+
+variable "dremio_node_pool_node_count" {
+  description = "Node count of the pipeline node pool"
+  type        = number
+  default     = 3
+}
+
+variable "dremio_node_pool_vm_size" {
+  description = "VM size of the pipeline node pool"
+  type        = string
+  default     = "standard_d4_v5"
+}
