@@ -68,3 +68,24 @@ resource "azurerm_storage_container" "ikigai_temp_dev" {
   name                  = var.temp_container_name
   storage_account_name  = azurerm_storage_account.development_storage_account.name
 }
+
+resource "azurerm_storage_container" "ikigai_search" {
+  name                  = var.search_container_name
+  storage_account_name  = azurerm_storage_account.development_storage_account.name
+}
+
+resource "azurerm_storage_blob" "search_facet_index_pkl" {
+  name                   = "search_facet_index/index.pkl"
+  storage_account_name   = azurerm_storage_account.development_storage_account.name
+  storage_container_name = azurerm_storage_container.ikigai_search.name
+  type                   = "Block"
+  source                 = "${path.module}/search_facet_index/index.pkl"
+}
+
+resource "azurerm_storage_blob" "search_facet_metadata_pkl" {
+  name                   = "search_facet_index/metadata.pkl"
+  storage_account_name   = azurerm_storage_account.development_storage_account.name
+  storage_container_name = azurerm_storage_container.ikigai_search.name
+  type                   = "Block"
+  source                 = "${path.module}/search_facet_index/metadata.pkl"
+}

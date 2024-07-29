@@ -30,6 +30,7 @@ For example, to set the `storage_account_name` input to `my_blob_store`, add `st
 | models_container_name | Name of the container for Ikigai models | `string` | `"ikigai-models"` | no |
 | resource_group_name | Name of the resource group the storage instances will be deployed into | `string` | `"ikigai-resource-group"` | no |
 | sample_dataset_container_name | Name of the container for sample dataset storage | `string` | `"ikigai-sample-datasets"` | no |
+| search_container_name | Name of the container for faiss file storage | `string` | `"ikigai-search"` | no |
 | service_principal_name | Name of the service principal used to authenticate blob storage with kubernetes | `string` | `"ikigai-service-principal"` | no |
 | storage_account_name | Name of the Ikigai blob storage account | `string` | `"ikigaistorage"` | no |
 | storage_account_replication_type | Replication type of the Ikigai blob storage account | `string` | `"ZRS"` | no |

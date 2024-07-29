@@ -74,3 +74,9 @@ variable "temp_container_name" {
   type        = string
   default     = "ikigai-temp"
 }
+
+variable "search_container_name" {
+  description = "Name of the container for faiss file storage"
+  type        = string
+  default     = "ikigai-search"
+}
