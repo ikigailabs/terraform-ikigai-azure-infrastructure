@@ -124,5 +124,5 @@ variable "dremio_node_pool_node_count" {
 variable "dremio_node_pool_vm_size" {
   description = "VM size of the pipeline node pool"
   type        = string
-  default     = "standard_e16s_v35"
+  default     = "standard_e16s_v3"
 }
