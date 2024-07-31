@@ -126,3 +126,21 @@ variable "dremio_node_pool_vm_size" {
   type        = string
   default     = "standard_e20s_v3"
 }
+
+variable "kuberay_node_pool_name" {
+  description = "Name of the kuberay node pool"
+  type        = string
+  default     = "kuberay"
+}
+
+variable "kuberay_node_pool_node_count" {
+  description = "Node count of the kuberay node pool"
+  type        = number
+  default     = 2
+}
+
+variable "kuberay_node_pool_vm_size" {
+  description = "VM size of the kuberay node pool"
+  type        = string
+  default     = "standard_d4_v5"
+}

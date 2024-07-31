@@ -108,3 +108,15 @@ resource "azurerm_kubernetes_cluster_node_pool" "dremio-node-pool" {
       role = "dremio"
   }
 }
+
+resource "azurerm_kubernetes_cluster_node_pool" "kuberay-node-pool" {
+  name                  = var.kuberay_node_pool_name
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.ikigai_cluster.id
+  vm_size               = var.kuberay_node_pool_vm_size
+  node_count            = var.kuberay_node_pool_node_count
+  vnet_subnet_id        = var.private_subnet_id
+  enable_node_public_ip = false
+  node_labels = {
+      role = "kuberay"
+  }
+}
