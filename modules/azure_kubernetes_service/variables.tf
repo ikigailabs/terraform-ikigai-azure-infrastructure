@@ -142,5 +142,5 @@ variable "kuberay_node_pool_node_count" {
 variable "kuberay_node_pool_vm_size" {
   description = "VM size of the kuberay node pool"
   type        = string
-  default     = "standard_d4_v5"
+  default     = "standard_e16_v3"
 }

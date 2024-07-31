@@ -35,7 +35,7 @@ For example, to set the `kubernetes_cluster_name` input to `my-cluster`, add `ku
 | dremio_node_pool_vm_size | VM size of the dremio node pool | `string` | `"standard_e20s_v3"` | no |
 | kuberay_node_pool_name |  Name of the kuberay node pool | `string` | `"kuberay"` | no |
 | kuberay_node_pool_node_count | Node count of the kuberay node pool | `number` | `2` | no |
-| kuberay_node_pool_vm_size | VM size of the kuberay node pool | `string` | `"standard_d4_v5"` | no |
+| kuberay_node_pool_vm_size | VM size of the kuberay node pool | `string` | `"standard_e16_v3"` | no |
 | kubernetes_cluster_dns_prefix | DNS prefix of the ikigai azure kubernetes cluster | `string` | `"ikigai"` | no |
 | kubernetes_cluster_dns_service_ip | DNS service IP of the ikigai azure kubernetes cluster | `string` | `"10.1.0.10"` | no |
 | kubernetes_cluster_name | Name of the ikigai azure kubernetes cluster | `string` | `"ikigai-aks-cluster"` | no |
