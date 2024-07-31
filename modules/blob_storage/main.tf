@@ -27,9 +27,20 @@ resource "azurerm_storage_account" "development_storage_account" {
   location                 = data.azurerm_resource_group.ikigai_rg.location
   account_tier             = var.storage_account_tier
   account_replication_type = var.storage_account_replication_type
+
   network_rules {
     default_action             = "Allow"
     virtual_network_subnet_ids = [var.private_subnet_id]
+  }
+
+  blob_properties {
+    cors_rule {
+      allowed_headers    = ["*"]
+      allowed_methods    = ["DELETE", "GET", "HEAD", "MERGE", "POST", "OPTIONS", "PUT", "PATCH"]
+      allowed_origins    = ["*"]
+      exposed_headers    = ["*"]
+      max_age_in_seconds = 0
+    }
   }
 }
 
