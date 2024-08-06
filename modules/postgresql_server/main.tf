@@ -211,6 +211,12 @@ resource "azurerm_postgresql_flexible_server" "pipeline-staging-postgresql-serve
   depends_on = [azurerm_private_dns_zone_virtual_network_link.vnet-link-pipeline-staging]
 }
 
+resource "azurerm_postgresql_flexible_server_configuration" "example" {
+  name      = "require_secure_transport"
+  server_id = azurerm_postgresql_flexible_server.pipeline-staging-postgresql-server.id
+  value     = "off"
+}
+
 resource "azurerm_postgresql_flexible_server_database" "pipeline-staging" {
   name      = var.pipeline_staging_database_name
 
