@@ -100,3 +100,35 @@ resource "azurerm_storage_blob" "search_facet_metadata_pkl" {
   type                   = "Block"
   source                 = "${path.module}/search_facet_index/metadata.pkl"
 }
+
+resource "azurerm_storage_blob" "generate_facet_index_pkl" {
+  name                   = "generate_facet_index/index.pkl"
+  storage_account_name   = azurerm_storage_account.development_storage_account.name
+  storage_container_name = azurerm_storage_container.ikigai_search.name
+  type                   = "Block"
+  source                 = "${path.module}/generate_facet_index/index.pkl"
+}
+
+resource "azurerm_storage_blob" "generate_facet_metadata_pkl" {
+  name                   = "generate_facet_index/metadata.pkl"
+  storage_account_name   = azurerm_storage_account.development_storage_account.name
+  storage_container_name = azurerm_storage_container.ikigai_search.name
+  type                   = "Block"
+  source                 = "${path.module}/generate_facet_index/metadata.pkl"
+}
+
+resource "azurerm_storage_blob" "generate_facet_raw_metadata" {
+  name                   = "generate_facet_index/raw_metadata.csv"
+  storage_account_name   = azurerm_storage_account.development_storage_account.name
+  storage_container_name = azurerm_storage_container.ikigai_search.name
+  type                   = "Block"
+  source                 = "${path.module}/generate_facet_index/raw_metadata.csv"
+}
+
+resource "azurerm_storage_blob" "generate_facet_staging_metadata" {
+  name                   = "generate_facet_index/staging_metadata.csv"
+  storage_account_name   = azurerm_storage_account.development_storage_account.name
+  storage_container_name = azurerm_storage_container.ikigai_search.name
+  type                   = "Block"
+  source                 = "${path.module}/generate_facet_index/staging_metadata.csv"
+}

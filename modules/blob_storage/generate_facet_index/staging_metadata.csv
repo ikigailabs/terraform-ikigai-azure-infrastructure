@@ -1,0 +1,665 @@
+UID,Description
+M_026,Split data based on values in a specific column
+M_026,Divide data according to values in a particular column
+M_026,Separate data based on values found in a specific column
+M_026,Extract data based on values in a designated column
+M_026,Segment data by values in a chosen column
+M_026,"Name: column-value Description: Split data by chosen values in a source column into multiple outputs
+ Fields:
+
+Column: column to split data on
+
+"
+M_027,Duplicate the dataset
+M_027,Create replicas of the dataset
+M_027,Clone the input data
+M_027,Generate duplicates of the dataset
+M_027,Replicate the dataset
+M_027,"Name: copy Description: Makes copies of the input dataset.
+ "
+M_022,Remove NaN values from dataset
+M_022,Drop missing values from data
+M_022,Eliminate NaN values in dataset
+M_022,Get rid of missing values in data
+M_022,Exclude NaN values from dataset
+M_022,"Name: drop-missing-values Description: Drop missing (NaN) values in the dataset
+ Fields:
+
+How: If “any” is chosen, drops the column if it contains any NaN value, if “all” is chosen, drops the column only if all its values are NaN
+Axis: Along which axes to drop the values (row or column)
+Target columns (optional): Apply the drop to this subset of columns. 
+
+"
+M_021,Remove duplicate entries
+M_021,Eliminate repeated rows
+M_021,Get rid of duplicate records
+M_021,Clean up duplicate data
+M_021,Remove redundant rows
+M_021,"Name: deduplicate Description: Remove duplicate rows.
+ "
+M_024,Arrange the data in specified columns in ascending order
+M_024,Sort the data in the given columns in descending order
+M_024,Order the information within the columns provided
+M_024,Sort columns in either ascending or descending order
+M_024,Arrange data in specified columns either ascending or descending
+M_024,"Name: sort Description: Sort the data within one or many columns.
+ Fields: 
+
+Target columns: List of column names that you want to sort
+Descending: If true, sorted descending by target column, if false, sorted ascending by target column
+
+"
+M_020,Transform data by pivoting rows into columns
+M_020,Create a summary table with rows as columns and values as cells
+M_020,Generate a cross-tabulated view of the data
+M_020,Convert rows into columns for better analysis
+M_020,Restructure data to have columns based on specific key and value columns
+M_020,"Name: cross-tab Description: Widen data by increasing the number of columns and decreasing the number of rows.
+ Fields: 
+
+Key column: Name of the column from which to get the name/header row of the output column
+Value column: Name of the column from which to get the cell values
+
+"
+M_025,Switch rows and columns
+M_025,Convert columns to rows
+M_025,Transform dataset by transposing
+M_025,Change rows to columns
+M_025,Reorganize data by transposing
+M_025,"Name: transpose Description: Transpose the dataset, making the columns become rows and the rows become columns
+ Fields: 
+
+Output key name: The desired name of the key column
+Output value name: The desired name of the value column
+Target columns: Columns to transpose
+
+"
+M_023,Get a sample of rows from a table
+M_023,Retrieve a subset of data from a table
+M_023,Extract a portion of data from a table
+M_023,Select random rows from a table
+M_023,Fetch a sample set from a table
+M_023,"Name: sample Description: Sample rows from a table
+ Fields: 
+
+Mode: Type of sampling to do
+
+Fraction: take a fraction of the data
+Number: take a certain number of rows
+First n record: take the first n records
+Last n record: take the last n records
+
+Value
+
+For fraction: float between 0-1
+For number: integer for number of rows to sample
+For first or last n record: integer for n
+
+Replace: If true, sample with replacement, if false, sample without replacement
+
+"
+M_018,Replace columns in a table with columns from another table by matching names
+M_018,Swap columns between two tables based on matching names
+M_018,Merge tables by substituting columns with matching names
+M_018,Update table by replacing columns with columns from another table
+M_018,Combine tables by substituting columns with same names
+M_018,"Name: substitute Description: Substitute columns from one table with columns from another table by matching column names. The table with more columns becomes the output table and the table with fewer columns will substitute its columns into the output table.
+ "
+M_017,Can you merge these two tables without using common key columns?
+M_017,"I need to select all rows from both tables where the column values match, can you help with that?"
+M_017,Please select all rows from the left table and matched rows from the right table in the join
+M_017,"I want to combine the matches from both left and right joins, is that possible?"
+M_017,Could you perform a left join after excluding all matching rows from both tables?
+M_017,"Name: join Description: Join two tables together on one or more common key columns. 
+ Fields:
+
+Option: The way in which to join
+
+Join by rows: Merge two tables without using common key columns
+Inner: Selects all rows from both tables as long as the column value matches
+Left: Selects all rows from the left table of the join and matched rows from the right table
+Right: Selects all rows from the right table of the join and matched rows from the left table
+Full: Combines the matches of both left and right joins
+Left without intersection: Left join after excluding all matching rows from both tables
+Right without intersection: Right join after excluding all matching rows from both tables
+
+
+On (optional): Select which columns to join on, similar to the use of ON in a SQL JOIN command (if nothing inputted, it will use all common column names as keys)
+
+Left table column: Column in the left table which will be used as a key
+Right table column: Column in the right table which will be used as a key
+
+
+Drop Missing Values (optional): Determine whether or not to remove rows with missing values in the key columns
+
+True: Remove rows with missing values in the key columns 
+False: Do not remove rows with missing values in the key columns 
+
+
+
+
+"
+M_019,Merge tables vertically
+M_019,Combine datasets vertically
+M_019,Join tables vertically
+M_019,Concatenate tables vertically
+M_019,Merge datasets using columns
+M_019,"Name: union Description: Combine tables vertically.
+ Fields:
+
+Option: How to combine 
+
+Schema mapping: Map data to equivalent columns on other datasets
+Full: Combines data using columns from both datasets
+
+
+Schema mapping: optional, use this only if you select schema mapping as an option: 
+
+Bottom table schema: Name of the column to map on the bottom table. 
+Top table schema: Name of the column to map on top table. 
+New schema: New name of the combined column 
+
+
+
+"
+M_043,Can you adjust the date and time by adding or subtracting a specific duration?
+M_043,"I need to modify the datetime values by increasing or decreasing a certain amount of time, can you help?"
+M_043,Is there a way to change the datetime column by adding or subtracting time?
+M_043,How can I manipulate the datetime values by incrementing or decrementing the time?
+M_043,"Looking for a function to adjust the datetime values by a specified time interval, any suggestions?"
+M_043,"Name: add-or-subtract-time Description: For your datetime value column, add or subtract a specified amount of time. 
+ Fields:
+
+
+Column name: Add or subtract time for this column of date-times.
+
+
+Direction: Increase or decrease your datetime value.
+
+
+Increment - Add the selected amount of time to your datetime value.
+
+
+Decrement- Subtract the selected amount of time to your datetime value.
+
+
+
+
+Value: The amount of time you want to offset your datetime value by as an integer > 0.
+
+
+Unit: Options include:
+
+Years
+Quarters
+Months
+Weeks
+Calendar Days - Number of days to add or subtract that includes weekends.
+Business Days - Number of days to add or subtract that only includes business days in a typical, namely five days per week. This value Includes holidays.
+Hours
+Seconds
+Milliseconds
+
+
+
+"
+M_047,How can I aggregate my time-related data over a custom number of rows using rolling windows?
+M_047,What options do I have for aggregating data per window in a rolling-window function?
+M_047,Can I specify the size of the window for aggregating data in a time-related dataset?
+M_047,Is it possible to select which columns to aggregate when using rolling windows?
+M_047,What is the default new column name format when using the rolling-window function?
+M_047,"Name: rolling-window Description: Aggregate your time-related data over a custom number of rows known as windows.
+ Fields:
+
+
+Column name: Column of datetime values.
+
+
+Window Size: Select an integer representing the number of rows to aggregate over. We treat each row as a unit, so a window size of 5 results in a window that spans 5 rows
+
+
+Aggregation Function: Select a function on how to aggregate data per window. If we discover null or NaN values, we skip these values and do not be interpolate them. If you want to interpolate the missing values, use the ‘Fill Missing Values’ facet can be before this facet. Options for this function include:
+
+Average
+Mean
+Median
+Mode
+Min
+Max
+Sum
+
+
+
+
+Columns to Aggregate: Select which columns to aggregate.
+
+
+New Column Name: Optional. Input a custom column name for your newly aggregated data. By default:
+
+
+We create a new column at the end of the data.
+
+
+If you provide no custom column name, the default column name is a concatenation of the window size, the aggregation function that you selected, and ‘Rolling’. For example, for a window of size 10 and an aggregation function of ‘mean’, the new column name is Rolling Mean (10). For a window size of 3 and aggregation function of ‘average’ was selected, the new column name is Rolling Average (3)
+
+
+
+
+
+
+
+
+By default, we populate empty cells with a null value.
+
+
+
+
+"
+M_045,How can I add the current time to my data?
+M_045,What is the function to insert the current timestamp into my dataset?
+M_045,How do I create a new column with the current date and time?
+M_045,Can you help me update my data with the current timestamp?
+M_045,What is the process to add a timestamped column with the current date and time?
+M_045,"Name: add-current-time Description: Add a timestamped column to your data with the current date and time.
+ Fields:
+
+
+New Column Name: Optional. Select a custom name for the new column with a timestamp, such as ‘Last Updated’. By default, we name this column ‘Timestamp’
+
+
+Date Format: Optional. By default, we use the timestamp format, such as 2017-01-01 12:00:00
+
+
+Override: Optional. Select this checkbox to override the value of the target column.
+
+
+If checked,- Does not create new columns. The facet continuously overwrites the column labeled ‘Target Column Name’. If ‘Target Column Name’ is blank, it will continuously overwrite the column labeled ‘Timestamp’
+
+
+If unchecked - if you have a column labeled ‘Timestamp’ or if you selected ‘New Column Name’, the facet creates a new column labeled ‘Timestamp 1’, ‘Timestamp 2’, ‘Timestamp 3’, or ‘Last Updated 1’, ‘Last Updated 2’, or ‘Last Updated 3’.
+
+
+
+
+"
+M_046,Filter data by time range
+M_046,Select date and time range for filtering
+M_046,Specify datetime column and time range for filtering
+M_046,Choose start and end date/time for data filtering
+M_046,Set date and time boundaries for data filtering
+M_046,"Name: filter-by-time Description: Filter your data given a selected time range for a datetime column.
+ Fields:
+
+
+Column name: Filter datetime values for this column of datetimes. If you provide no time range, this defaults to midnight for your start date and 11:59:59 for your end date.
+
+
+Filter Range: Select a range of specific dates and optionally a specific time to filter. Inclusive of your start and end dates and times.
+
+
+‘From': Select a specific start date and optionally provide a specific time.
+
+
+'To’: Select a specific end date and optionally provide a specific time. For example, filter from 1/1/2023 to 12/4/2023 or from 1/1/2023 05:10:00 to 12/4/2023 05:10:00.
+
+
+
+
+
+"
+M_044,Retrieve time unit from datetime values
+M_044,Extract specific time unit from date and time
+M_044,Create new column with time unit from datetime
+M_044,Get time component from date field
+M_044,Add time unit to a new column
+M_044,"Name: get-time-unit Description: Get a specific time unit from your datetime values, such as month or year, and place it in a new column.
+ Fields:
+
+
+Column name: Get a time unit from this column of datetime values.
+
+
+Unit: Get this unit of time from your datetime value.
+
+Options: ‘Weekday’ and ‘Month Name’ return a string value such as ‘Monday’ or ‘January’ and not a numerical value. For all other units of time, we return a numerical value.
+
+Year
+Month
+Month Name
+Quarter
+Day
+Hour
+Minute
+Second
+Weekday
+Week of Year
+Day of Year
+
+
+
+
+
+New Column Name: Optional. Input a custom column name for the new target column. By default, this facet creates a new column to the right of the datetime column and names it by the input datetime column plus the name of the time-unit that you selected.
+
+
+"
+M_042,Can you adjust the time intervals in my data to a different granularity?
+M_042,"I need to change the time representation in my dataset to a specific frequency, like monthly or weekly."
+M_042,Is there a way to convert the time granularity of a column to a different frequency?
+M_042,How can I modify the time intervals in my data to be represented in hours or minutes?
+M_042,What options do I have to change the time granularity of a column in my dataset?
+M_042,"Name: change-time-granularity Description: Change the intervals of time used in your data to a desired time granularity. For example, change each row in your data from being represented as a single day to being represented as a single month or vice versa.
+ Fields:
+Column name: change the time granularity for this column.
+Target Frequency: The desired frequency to represent data, such as weekly, quarterly, and so on. Options include:
+
+Business days
+Calendar days
+Weekly
+Monthly
+Quarterly
+Yearly
+Hourly
+Minutely
+Secondly
+
+You can also add a custom frequency, such as 1h30min. You should express a custom frequency as an integer value followed by an offset alias. See here to view valid offset aliases.
+
+
+Column Name and Aggregation Function: Optional. Select the function for aggregating data per column to decrease your time interval. For example, data represented per month to data represented per day.. By default, this facet sums up numerical values and takes the mode from text or string values. Options include:
+
+Average
+Mean
+Median
+Mode
+Min
+Max
+Sum
+First
+Last
+
+Column Name and Fill Missing Values Function: Optional. Select the function that fills missing values when increasing your time interval, such as changing data represented per day to data represented per month.
+
+Forward Fill: fills the missing value with the last observed non-null value.
+Backwards Fill: fills the missing value with the next observed non-null value
+User-defined value: fills the missing value with a provided static value.
+By default, this facet fills numerical values in linearly and fills text values with the original value
+Options include: Average, Median, Mode, Min, Max, Linear, Forward Fill, Backwards Fill, User-defined value
+
+"
+M_004,Get data insights
+M_004,Analyze data metrics
+M_004,Provide data summary
+M_004,Retrieve data statistics
+M_004,Show data characteristics
+M_004,"Name: describe Description: Get key statistics about your data.
+ "
+M_005,Delete columns
+M_005,Exclude columns
+M_005,Omit columns
+M_005,Drop fields
+M_005,Remove attributes
+M_005,"Name: drop-columns Description: Remove one or more columns from the dataset.
+ Fields:
+
+Target columns: The columns to remove
+
+"
+M_007,Execute a custom SQL query on my data
+M_007,Run a SQL command on my data
+M_007,Apply a custom SQL query to my data
+M_007,Use a custom SQL command on my data
+M_007,Run a custom SQL query on my data
+M_007,"Name: free-form-sql Description: Apply a custom SQL query to your data.
+ Fields:
+
+SQL command: The SQL command you want to use
+
+"
+M_010,Create a new column in the dataset
+M_010,Add a custom column to the dataset
+M_010,Insert a new column with a specific name
+M_010,Include a user-defined column in the dataset
+M_010,Append a column with a specified name and values
+M_010,"Name: new-columns Description: Add a new column to the dataset with a desired column name. Also optionally fill it with the same user specified values for all rows.
+ Fields:
+
+New column name: the name of the new column
+Column value (optional): the value to assign each row in the column. 
+
+"
+M_011,Generate a pivot table from the given data
+M_011,Create a spreadsheet-style pivot table
+M_011,Pivot the data based on specified index columns
+M_011,Aggregate values in a pivot table
+M_011,Apply aggregation function to pivot the data
+M_011,"Name: pivot-table Description: Creates a spreadsheet-style pivot table as a DataFrame.
+ Fields:
+
+Index columns : Columns to pivot on
+Value columns (optional) : Columns to aggregate
+Aggregate function (optional) : Function to be applied on the pivoted table
+
+"
+M_013,Can you provide a summary for this column?
+M_013,"I need to get some statistics for this dataset column, can you help?"
+M_013,What are the different ways I can summarize this dataset column?
+M_013,How can I analyze this column using summary functions?
+M_013,"I'm looking to get a summary of this specific column, what options do I have?"
+M_013,"Name: summary Description: Use one or more functions to summarize a column in the dataset.
+ Fields:
+
+Group by (optional): If provided, functions will be applied within a group.
+
+Functions:
+
+Basic functions: First, last, mode, count, count_non_null, count_null, count_distinct, count_distinct_non_null
+Numeric functions: Max, min, sum, average, median, variance, standard_deviation
+String functions: Longest, shortest
+
+
+Condition: List of conditions to apply
+
+Function: function you want to apply to summarize column
+Output column name (optional): If provided, the output will be stored in a column by this name.
+Target column: Column to summarize.
+
+
+"
+M_008,Convert columns to rows
+M_008,Unpivot dataset
+M_008,Transform columns into rows
+M_008,Reshape data
+M_008,Change columns to variables
+M_008,"Name: melt Description: Melt, or unpivot columns in the dataset. This converts columns in the original dataset to rows in the output dataset.
+ Fields: 
+
+Identifier variables: Columns to use as identifier variables. This column will remain in the melted dataset.
+Columns to melt: List of columns to melt/unpivot. The headers of these columns will be values in the 'variable column name' column.
+Variable column name: Name to use for the ‘variable’ column. The headers in the 'Columns to melt' column will appear in this column.
+Value column name: Name to use for the ‘value’ column. The values in the 'Columns to melt' columns will appear in this column.
+
+"
+M_006,Select rows based on specific conditions
+M_006,Filter data based on criteria
+M_006,Retrieve rows that meet certain requirements
+M_006,Extract cases that satisfy given conditions
+M_006,Get data rows that match specified rules
+M_006,"Name: filter Description: Choose rows, or cases, where certain conditions are true to filter the data.
+ Fields:
+
+Expressions: List the operations to perform
+
+Format
+
+Operators: ==, !=, >=, >, <, <=, +, -, *, /, |, &
+Functions: is_null(), is_not_null(), max(), min(), sum(), average(), median(), variance(), standard_deviation()
+
+Tips
+
+Column names should be in brackets 
+String values should be in quotation marks
+
+
+
+"
+M_012,Choose specific columns and remove the others
+M_012,Filter out unwanted columns and retain selected ones
+M_012,Pick certain columns and discard the rest
+M_012,Select only desired columns and exclude the rest
+M_012,Retain specified columns and eliminate the rest
+M_012,"Name: select Description: Keep selected columns and drop the rest of the columns from your data.
+ "
+M_003,How can I group and count the number of unique combinations in one or more columns?
+M_003,Is there a way to get a count of unique combinations in specified columns?
+M_003,Can you help me with counting the instances of each unique combination in certain columns?
+M_003,"I need to group and count the occurrences of unique combinations in specific columns, can you assist?"
+M_003,Is there a function to count the number of instances for each unique combination in certain columns?
+M_003,"Name: count Description: Group items from one or more columns and count the number of instances of each unique combination.
+ Fields:
+
+Target columns: List of columns to count.
+Sort: Optional. If set to true, the output will be in descending order of number of instances.
+Output Column Name (optional): Name given to the output column containing the count of instances.
+
+"
+M_028,Add a primary key column to the dataset
+M_028,Insert a unique identifier as the first column in the dataset
+M_028,Include an index column at the beginning of the dataset
+M_028,Add a primary key to the target columns
+M_028,Place a unique identifier as the first column in the dataset
+M_028,"Name: add-primary-key Description: Inserts a primary key column/index/unique identifier as the first column in the dataset.
+ Fields: 
+
+Target columns: column(s) you want to keep.
+
+"
+M_035,Split the column in the data based on a specific character or word
+M_035,Divide the column by a separator into multiple parts
+M_035,Separate the column using a specific character or word
+M_035,Break down the column into segments using a separator
+M_035,Split the column into different parts using a specified character
+M_035,"Name: text-split Description: Split a column in the data based on a character or word.
+ Fields:
+
+Column Name : Column you want to split
+Max split (optional): Maximum number of splits of the column
+Separator : Character or word to split the column on
+
+"
+M_033,Perform calculations on multiple datasets using a formula
+M_033,Apply spreadsheet-like formulas to multiple data sets
+M_033,Edit or add data by inputting a formula expression
+M_033,Utilize formula expressions to manipulate multiple datasets
+M_033,Perform calculations on multiple data sets with a formula
+M_033,"Name: multi-input-formula Description: Performs spreadsheet-like formula operations on multiple datasets and edits or adds to the existing data.
+ Fields:
+
+Expression: Write the formula expression. 
+
+"
+M_034,Change the names of columns in the dataset
+M_034,Update the column headers in the data
+M_034,Modify the column names in the dataset
+M_034,Rename the fields in the data table
+M_034,Edit the names of columns in the dataset
+M_034,"Name: rename-columns Description: Rename column names in the data
+ "
+M_030,Replace text in a column
+M_030,Update values in a dataset
+M_030,Modify data in a specific column
+M_030,Substitute text in a field
+M_030,Change values in a column
+M_030,"Name: find-replace Description: Find a value and replace it with another value in a column of the dataset.
+ Fields:
+
+Target column: A column name where a value needs to be replaced
+Find : Enter a string value which needs to be found
+Replace : Enter a string value that will replace the found value.
+Ignore Case : Select true or false. If true, text case will be ignored.
+Match whole words only : Select true or false. If true, replacement happens when an entire value matches the found value.
+
+"
+M_029,How can I fill missing values in a column with a specific value or operation?
+M_029,What options do I have to fill missing values in a column?
+M_029,Is there a way to automatically fill missing values in a column based on certain criteria?
+M_029,Can I replace missing values in a column with the last or next observed non-null value?
+M_029,What are the different methods available to handle missing values in a column?
+M_029,"Name: fill-missing-values Description: Fill missing values in a column either with a user defined value or an operation like min, max, mean, median etc.
+ Fields:
+
+Column name: Select a column where the missing values need to be filled.
+Fill with: Select the type of operation to fill the missing value with, among the options given in the drop-down
+
+ffill: fills the missing value with the last observed non-null value.
+bfill: fills the missing value with the next observed non-null value.
+
+Fill value (optional): User defined value to fill the missing values with
+
+"
+M_040,Can you help me fill in missing values in my dataset using linear interpolation?
+M_040,"I need to deduce and insert missing values between existing data points in my dataset, can you assist with that?"
+M_040,What method should I use to fill empty values with the preceding existing value in my dataset?
+M_040,How can I fill up missing values in my dataset by the nearest surrounding values?
+M_040,What is the process for filling missing values with a spline curve in my dataset?
+M_040,"Name: interpolate Description: For existing values in your dataset, deduce and insert any missing values between them.
+ Fields:
+
+Column Name: Providing missing values for this column in the dataset.
+Fill With: Select a method for interpolating missing values. The options include:
+
+linear - Treat the values as equally spaced regardless of the table index.
+pad - Fill empty values with the preceding existing value. 
+nearest - Fill up the missing values by the nearest surrounding values. For example, a missing value preceded by the value 2 will have 2.
+zero - Fill missing values with 0.
+polynomial - Fills missing values with the lowest possible degree that passes through available data points. If you choose this, you should provide an Order.
+spline - Use a lower order polynomial known as spline to fit a curve to the data points. Base missing values on that curve. If you choose this, you should provide an Order.
+
+
+Order: The lowest possible number of times a curve passes through existing values, represented as N+1 where N is the Order you specify. For example, 1 means only 2 intersections, or a linear slope and therefore linear interpolation.
+
+"
+M_032,Retrieve dataset headers only
+M_032,Get column names only from dataset
+M_032,Return only headers from dataset
+M_032,Extract column headers from dataset
+M_032,Show dataset headers exclusively
+M_032,"Name: keep-headers-only Description: Get a dataset with only the headers, or column names.
+ "
+M_038,Generate insights from time series data
+M_038,Analyze time series dataset
+M_038,Extract features from time series data
+M_038,Explore patterns in time series dataset
+M_038,Get statistics from time series data
+M_038,"Name: eda-time-series Description: Creates multiple datasets that help understand the properties of the input Time series dataset.
+ Fields:
+
+Time column: Column containing datetime information. eg. Sales Date
+Identifier column: Column containing identifier information. eg. SKU
+Value column: Column containing value information. eg. Price
+
+"
+M_037,Generate exploratory data analysis
+M_037,Create data insights
+M_037,Analyze dataset characteristics
+M_037,Produce data exploration reports
+M_037,Generate descriptive statistics
+M_037,"Name: eda Description: Creates multiple datasets that help understand the properties of the input dataset.
+ Fields:
+
+N/A
+
+"
+M_002,Change data type of a column in the dataset
+M_002,Modify data type of a specific column
+M_002,Transform column data type in the dataset
+M_002,Convert column to a different data type
+M_002,Adjust data type of a column in the dataset
+M_002,"Name: convert Description: Convert the data type of a column in the dataset to a desired type and format, so you can use it properly in future calculations or visualizations.
+ Fields:
+
+Column name: Column to change the data type of
+Data type: The desired data type of the column
+Data format (optional): The desired format of the data type
+
+"
