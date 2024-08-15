@@ -17,7 +17,7 @@ data "azurerm_resource_group" "ikigai_rg" {
   name = var.resource_group_name
 }
 
-# Launching airbyte SQL development server
+# Launching airbyte SQL server
 resource "azurerm_private_dns_zone" "database-dns-airbyte" {
   name                = var.airbyte_server_hostname
   resource_group_name = data.azurerm_resource_group.ikigai_rg.name
@@ -42,7 +42,6 @@ resource "azurerm_postgresql_flexible_server" "airbyte-postgresql-server" {
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-airbyte.id
   public_network_access_enabled = false
 
-  #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.airbyte_storage_capacity
 
   sku_name   = var.airbyte_sku_name
@@ -57,7 +56,7 @@ resource "azurerm_postgresql_flexible_server_database" "airbyte" {
 }
 
 
-# Launching dashhub SQL development server
+# Launching dashhub SQL server
 resource "azurerm_private_dns_zone" "database-dns-dashhub" {
   name                = var.dashhub_server_hostname
   resource_group_name = data.azurerm_resource_group.ikigai_rg.name
@@ -82,7 +81,6 @@ resource "azurerm_postgresql_flexible_server" "dashhub-postgresql-server" {
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-dashhub.id
   public_network_access_enabled = false
 
-  #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.dashhub_storage_capacity
 
   sku_name   = var.dashhub_sku_name
@@ -97,7 +95,7 @@ resource "azurerm_postgresql_flexible_server_database" "dashhub" {
 }
 
 
-# Launching database-storage SQL development server
+# Launching database-storage SQL server
 resource "azurerm_private_dns_zone" "database-dns-database-storage" {
   name                = var.database_storage_server_hostname
   resource_group_name = data.azurerm_resource_group.ikigai_rg.name
@@ -122,7 +120,6 @@ resource "azurerm_postgresql_flexible_server" "database-storage-postgresql-serve
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-database-storage.id
   public_network_access_enabled = false
 
-  #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.database_storage_storage_capacity
 
   sku_name   = var.database_storage_sku_name
@@ -138,7 +135,7 @@ resource "azurerm_postgresql_flexible_server_database" "database-storage" {
 }
 
 
-# Launching jupyterhub SQL development server
+# Launching jupyterhub SQL server
 resource "azurerm_private_dns_zone" "database-dns-jupyterhub" {
   name                = var.jupyterhub_server_hostname
   resource_group_name = data.azurerm_resource_group.ikigai_rg.name
@@ -163,7 +160,6 @@ resource "azurerm_postgresql_flexible_server" "jupyterhub-postgresql-server" {
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-jupyterhub.id
   public_network_access_enabled = false
 
-  #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.jupyterhub_storage_capacity
 
   sku_name   = var.jupyterhub_sku_name
@@ -179,7 +175,7 @@ resource "azurerm_postgresql_flexible_server_database" "jupyterhub" {
 }
 
 
-# Launching pipeline-staging SQL development server
+# Launching pipeline-staging SQL server
 resource "azurerm_private_dns_zone" "database-dns-pipeline-staging" {
   name                = var.pipeline_staging_server_hostname
   resource_group_name = data.azurerm_resource_group.ikigai_rg.name
@@ -204,7 +200,6 @@ resource "azurerm_postgresql_flexible_server" "pipeline-staging-postgresql-serve
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-pipeline-staging.id
   public_network_access_enabled = false
 
-  #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.pipeline_staging_storage_capacity
 
   sku_name   = var.pipeline_staging_sku_name
@@ -226,7 +221,7 @@ resource "azurerm_postgresql_flexible_server_database" "pipeline-staging" {
 }
 
 
-# Launching service-metadata SQL development server
+# Launching service-metadata SQL server
 resource "azurerm_private_dns_zone" "database-dns-service-metadata" {
   name                = var.service_metadata_server_hostname
   resource_group_name = data.azurerm_resource_group.ikigai_rg.name
@@ -239,7 +234,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "vnet-link-service-meta
   resource_group_name   = data.azurerm_resource_group.ikigai_rg.name
 }
 
-resource "azurerm_postgresql_flexible_server" "service-metadata-development-postgresql-server" {
+resource "azurerm_postgresql_flexible_server" "service-metadata-postgresql-server" {
   name                   = var.service_metadata_server_name
   resource_group_name    = data.azurerm_resource_group.ikigai_rg.name
   location               = data.azurerm_resource_group.ikigai_rg.location
@@ -251,7 +246,6 @@ resource "azurerm_postgresql_flexible_server" "service-metadata-development-post
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-service-metadata.id
   public_network_access_enabled = false
 
-  #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.service_metadata_storage_capacity
 
   sku_name   = var.service_metadata_sku_name
@@ -260,14 +254,14 @@ resource "azurerm_postgresql_flexible_server" "service-metadata-development-post
 
 resource "azurerm_postgresql_flexible_server_database" "service-metadata" {
   name      = var.service_metadata_database_name
-  server_id = azurerm_postgresql_flexible_server.service-metadata-development-postgresql-server.id
+  server_id = azurerm_postgresql_flexible_server.service-metadata-postgresql-server.id
   charset   = var.service_metadata_database_charset
   collation = var.service_metadata_database_collation
 }
 
 
 
-# Launching superset SQL development server
+# Launching superset SQL server
 resource "azurerm_private_dns_zone" "database-dns-superset" {
   name                = var.superset_server_hostname
   resource_group_name = data.azurerm_resource_group.ikigai_rg.name
@@ -280,7 +274,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "vnet-link-superset" {
   resource_group_name   = data.azurerm_resource_group.ikigai_rg.name
 }
 
-resource "azurerm_postgresql_flexible_server" "superset-development-postgresql-server" {
+resource "azurerm_postgresql_flexible_server" "superset-postgresql-server" {
   name                   = var.superset_server_name
   resource_group_name    = data.azurerm_resource_group.ikigai_rg.name
   location               = data.azurerm_resource_group.ikigai_rg.location
@@ -292,7 +286,6 @@ resource "azurerm_postgresql_flexible_server" "superset-development-postgresql-s
   private_dns_zone_id    = azurerm_private_dns_zone.database-dns-superset.id
   public_network_access_enabled = false
 
-  #TODO currently set to this number, but needs to adjusted in dev and prod to handle increased volume
   storage_mb = var.superset_storage_capacity
 
   sku_name   = var.superset_sku_name
@@ -301,7 +294,7 @@ resource "azurerm_postgresql_flexible_server" "superset-development-postgresql-s
 
 resource "azurerm_postgresql_flexible_server_database" "superset" {
   name      = var.superset_database_name
-  server_id = azurerm_postgresql_flexible_server.superset-development-postgresql-server.id
+  server_id = azurerm_postgresql_flexible_server.superset-postgresql-server.id
   charset   = var.superset_database_charset
   collation = var.superset_database_collation
 }

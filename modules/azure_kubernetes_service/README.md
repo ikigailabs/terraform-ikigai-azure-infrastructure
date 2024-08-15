@@ -26,7 +26,7 @@ For example, to set the `kubernetes_cluster_name` input to `my-cluster`, add `ku
 |------|-------------|------|---------|:--------:|
 | kubernetes_cluster_client_id | Service Principal client ID for the ikigai azure kubernetes cluster | `string` | n/a | yes |
 | kubernetes_cluster_client_secret | Service Principal client secret for the ikigai azure kubernetes cluster | `string` | n/a | yes |
-| private_subnet_id | ID of the private subnet linked to the storage instances | `string` | n/a | yes |
+| private_subnet_id | ID of the private subnet linked to the aks instance | `string` | n/a | yes |
 | default_node_pool_name | Name of the default node pool in the cluster | `string` | `"default"` | no |
 | default_node_pool_node_count | Node count of the default node pool in the cluster | `number` | `1` | no |
 | default_node_pool_vm_size | VM size of the default node pool | `string` | `"standard_d2_v2"` | no |

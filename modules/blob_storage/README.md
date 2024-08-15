@@ -39,4 +39,6 @@ For example, to set the `storage_account_name` input to `my_blob_store`, add `st
 
 ## Outputs
 
-There are no outputs for this module
+| Name | Description |
+|------|:-------------:|
+| storage_account_access_key | Access key for the Ikigai storage account |

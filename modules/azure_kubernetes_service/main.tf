@@ -26,15 +26,15 @@ provider "azurerm" {
 }
 
 # Loading previous instances of the resource group
-data "azurerm_resource_group" "development_rg" {
+data "azurerm_resource_group" "ikigai_rg" {
   name     = var.resource_group_name
 }
 
-# Creating the development cluster
+# Creating the ikigai cluster
 resource "azurerm_kubernetes_cluster" "ikigai_cluster" {
   name                = var.kubernetes_cluster_name
-  location            = data.azurerm_resource_group.development_rg.location
-  resource_group_name = data.azurerm_resource_group.development_rg.name
+  location            = data.azurerm_resource_group.ikigai_rg.location
+  resource_group_name = data.azurerm_resource_group.ikigai_rg.name
 
   dns_prefix = var.kubernetes_cluster_dns_prefix
 

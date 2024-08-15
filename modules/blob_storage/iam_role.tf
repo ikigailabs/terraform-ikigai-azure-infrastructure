@@ -3,7 +3,7 @@ data "azuread_service_principal" "ikigai_service_principal" {
 }
 
 resource "azurerm_role_assignment" "storage_contributor_assignment" {
-  scope                = azurerm_storage_account.development_storage_account.id
+  scope                = azurerm_storage_account.ikigai_storage_account.id
   role_definition_name = "Storage Blob Data Contributor"
   principal_id         = data.azuread_service_principal.ikigai_service_principal.object_id
 }

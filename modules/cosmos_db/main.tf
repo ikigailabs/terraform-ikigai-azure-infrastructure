@@ -11,14 +11,14 @@ provider "azurerm" {
   features {}
 }
 
-data "azurerm_resource_group" "development_rg" {
+data "azurerm_resource_group" "ikigai_rg" {
   name     = var.resource_group_name
 }
 
 resource "azurerm_cosmosdb_account" "cosmosdb_account" {
   name                = var.cosmosdb_account_name
-  location            = data.azurerm_resource_group.development_rg.location
-  resource_group_name = data.azurerm_resource_group.development_rg.name
+  location            = data.azurerm_resource_group.ikigai_rg.location
+  resource_group_name = data.azurerm_resource_group.ikigai_rg.name
   offer_type          = "Standard"
 
   consistency_policy {

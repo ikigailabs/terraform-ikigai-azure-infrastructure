@@ -5,7 +5,7 @@ variable "resource_group_name" {
 }
 
 variable "private_subnet_id" {
-  description = "ID of the private subnet linked to the storage instances"
+  description = "ID of the private subnet linked to the cosmos instances"
   type        = string
 }
 

@@ -24,7 +24,7 @@ For example, to set the `cosmosdb_account_name` input to `my_cosmosdb`, add `sto
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | cosmosdb_replication_region | Name of the Azure region to host replicated data | `string` | n/a | yes |
-| private_subnet_id | ID of the private subnet linked to the storage instances | `string` | n/a | yes |
+| private_subnet_id | ID of the private subnet linked to the cosmos instances | `string` | n/a | yes |
 | connections_table_name | Ikigai connections cosmosDB table name | `string` | `"connections-ikigai"` | no |
 | cosmosdb_account_name | Name of the Ikigai cosmosDB account | `string` | `"ikigai-cosmosdb"` | no |
 | cosmosdb_consistency_level | Consistency policy of the Ikigai cosmosDB account | `string` | `"Eventual"` | no |

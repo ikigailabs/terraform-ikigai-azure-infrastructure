@@ -27,4 +27,7 @@ For example, to set the `application_insights_name` input to `my_insights`, add 
 
 ## Outputs
 
-There are no outputs for this module
+| Name | Description |
+|------|:-------------:|
+| application_insights_connection_string | Connection string for the Ikigai application insights instance |
+| application_insights_app_id | App ID for the Ikigai application insights instance |
