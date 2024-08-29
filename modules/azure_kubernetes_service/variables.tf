@@ -60,7 +60,7 @@ variable "default_node_pool_node_count" {
 variable "default_node_pool_vm_size" {
   description = "VM size of the default node pool"
   type        = string
-  default     = "standard_d2_v2"
+  default     = "standard_d4_v5"
 }
 
 variable "kubernetes_cluster_client_id" {

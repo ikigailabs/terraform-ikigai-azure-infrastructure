@@ -10,8 +10,6 @@ This is a simple example usage of the Virtual Network module, only setting the r
 module "azure-infrastructure_vpc" {
   source  = "ikigailabs/azure-infrastructure/ikigai//modules/vpc"
   version = "~> 1.0"
-  
-  resource_group_location = "REQUIRED_LOCATION"
 }
 ```
 
@@ -20,7 +18,6 @@ For example, to set the `kubernetes_cluster_name` input to `my-cluster`, add `ku
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| resource_group_location | Location of the resource group to be created | `string` | n/a | yes |
 | application_gateway_subnet_address_prefix | Address prefix of the application gateway subnet | `string` | `"10.0.4.0/24"` | no |
 | application_gateway_subnet_name | Name of the application gateway subnet | `string` | `"application-gateway-subnet"` | no |
 | database_subnet_address_prefix | Address prefix of the database subnet | `string` | `"10.0.3.0/24"` | no |

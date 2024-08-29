@@ -29,7 +29,7 @@ For example, to set the `kubernetes_cluster_name` input to `my-cluster`, add `ku
 | private_subnet_id | ID of the private subnet linked to the aks instance | `string` | n/a | yes |
 | default_node_pool_name | Name of the default node pool in the cluster | `string` | `"default"` | no |
 | default_node_pool_node_count | Node count of the default node pool in the cluster | `number` | `1` | no |
-| default_node_pool_vm_size | VM size of the default node pool | `string` | `"standard_d2_v2"` | no |
+| default_node_pool_vm_size | VM size of the default node pool | `string` | `"standard_d4_v5"` | no |
 | dremio_node_pool_name |  Name of the dremio node pool | `string` | `"dremio"` | no |
 | dremio_node_pool_node_count | Node count of the dremio node pool | `number` | `3` | no |
 | dremio_node_pool_vm_size | VM size of the dremio node pool | `string` | `"standard_e20s_v3"` | no |
