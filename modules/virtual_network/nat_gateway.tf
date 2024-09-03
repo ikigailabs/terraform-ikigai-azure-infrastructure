@@ -1,7 +1,7 @@
 resource "azurerm_nat_gateway" "ikigai_nat_gateway" {
   name                    = var.nat_gateway_name
-  location                = azurerm_resource_group.ikigai_rg.location
-  resource_group_name     = azurerm_resource_group.ikigai_rg.name
+  location                = data.azurerm_resource_group.ikigai_rg.location
+  resource_group_name     = data.azurerm_resource_group.ikigai_rg.name
 }
 
 resource "azurerm_subnet_nat_gateway_association" "private_subnet_nat_gateway_association" {
@@ -11,8 +11,8 @@ resource "azurerm_subnet_nat_gateway_association" "private_subnet_nat_gateway_as
 
 resource "azurerm_public_ip" "nat_gateway_public_ip" {
   name                = var.nat_gateway_public_ip_name
-  location            = azurerm_resource_group.ikigai_rg.location
-  resource_group_name = azurerm_resource_group.ikigai_rg.name
+  location            = data.azurerm_resource_group.ikigai_rg.location
+  resource_group_name = data.azurerm_resource_group.ikigai_rg.name
   allocation_method   = "Static"
   sku                 = "Standard"
 }

@@ -1,7 +1,7 @@
 resource "azurerm_network_security_group" "ikigai_vnet_nsg" {
   name                = var.security_group_name
-  location            = azurerm_resource_group.ikigai_rg.location
-  resource_group_name = azurerm_resource_group.ikigai_rg.name
+  location            = data.azurerm_resource_group.ikigai_rg.location
+  resource_group_name = data.azurerm_resource_group.ikigai_rg.name
 }
 
 resource "azurerm_subnet_network_security_group_association" "private_subnet_nsg_association" {
