@@ -15,10 +15,14 @@ variable "application_gateway_subnet_id" {
   type        = string
 }
 
+variable "domain_cert_resource_group_name" {
+  description = "Name of the resource group storing the ikigai ssl certificate"
+  type        = string
+}
+
 variable "domain_cert_key_vault_name" {
   description = "Name of the key vault storing the ikigai ssl certificate"
   type        = string
-  default     = "ikigai-certificates"
 }
 
 variable "domain_cert_key_vault_id" {

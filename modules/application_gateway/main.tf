@@ -25,5 +25,5 @@ data "azurerm_resource_group" "ikigai_rg" {
 
 data "azurerm_key_vault" "certificate_key_vault" {
   name                = var.domain_cert_key_vault_name
-  resource_group_name = "certificate-resource-group"
+  resource_group_name = var.domain_cert_resource_group_name
 }

@@ -13,8 +13,10 @@ module "azure-infrastructure_aks" {
   source  = "ikigailabs/azure-infrastructure/ikigai//modules/aks"
   version = "~> 1.0"
   
-  application_gateway_subnet_id = data.azurerm_subnet.app_gateway_subnet.id
-  domain_cert_key_vault_id      = "REQUIRED_KEY_VAULT_ID"
+  application_gateway_subnet_id   = data.azurerm_subnet.app_gateway_subnet.id
+  domain_cert_key_vault_id        = "REQUIRED_KEY_VAULT_ID"
+  domain_cert_key_vault_name      = "REQUIRED_KEY_VAULT_NAME"
+  domain_cert_resource_group_name = "REQUIRED_KEY_VAULT_RESOURCE_GROUP_NAME"
 }
 ```
 
@@ -25,7 +27,8 @@ For example, to set the `frontend_gateway_name` input to `my_gateway`, add `fron
 |------|-------------|------|---------|:--------:|
 | application_gateway_subnet_id | ID of the subnet dedicated to hosting application gateways | `string` | n/a | yes |
 | domain_cert_key_vault_id | Key vault secret ID for the Ikigai ssl certificate | `string` | n/a | yes |
-| domain_cert_key_vault_name | Name of the key vault storing the Ikigai ssl certificate | `string` | `"ikigai-certificates"` | no |
+| domain_cert_key_vault_name | Name of the key vault storing the Ikigai ssl certificate | `string` | n/a | yes |
+| domain_cert_resource_group_name | Name of the resource group storing the Ikigai ssl certificate | `string` | n/a | yes |
 | resource_group_name | Name of the resource group the application gateways will be deployed into | `string` | `"ikigai-resource-group"` | no |
 | frontend_gateway_autoscale_max_capacity | Maximum autoscaling capacity of the frontend application gateway | `number` | `10` | no |
 | frontend_gateway_autoscale_min_capacity |  Minimum autoscaling capacity of the frontend application gateway | `number` | `1` | no |
