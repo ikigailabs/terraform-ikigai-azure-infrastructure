@@ -16,11 +16,6 @@ resource "azurerm_subnet_route_table_association" "private_subnet_rtb_associatio
   route_table_id = azurerm_route_table.igw_rtb.id
 }
 
-resource "azurerm_subnet_route_table_association" "public_subnet_rtb_association" {
-  subnet_id      = azurerm_subnet.public_subnet.id
-  route_table_id = azurerm_route_table.igw_rtb.id
-}
-
 resource "azurerm_subnet_route_table_association" "database_subnet_rtb_association" {
   subnet_id      = azurerm_subnet.database_subnet.id
   route_table_id = azurerm_route_table.igw_rtb.id

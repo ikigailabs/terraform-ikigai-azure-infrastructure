@@ -26,8 +26,6 @@ For example, to set the `kubernetes_cluster_name` input to `my-cluster`, add `ku
 | nat_gateway_public_ip_name | Name of the public IP associated with the NAT gateway | `string` | `"ikigai-NAT-Gateway-Public-IP"` | no |
 | private_subnet_address_prefix | Address prefix of the private subnet | `string` | `"10.0.32.0/19"` | no |
 | private_subnet_name | Name of the private subnet | `string` | `"private-subnet"` | no |
-| public_subnet_address_prefix |  Address prefix of the public subnet | `string` | `"10.0.1.0/24"` | no |
-| public_subnet_name | Name of the public subnet | `string` | `"public-subnet"` | no |
 | resource_group_name | Name of the resource group to be created | `string` | `"ikigai-resource-group"` | no |
 | route_table_name | Name of the route table for internet gateway access | `"ikigai-route-table"` | `string` | no |
 | security_group_name | Name of the security group for the ikigai virtual network | `string` | `"ikigai-security-group"` | no |

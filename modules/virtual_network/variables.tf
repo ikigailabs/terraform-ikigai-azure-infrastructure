@@ -28,18 +28,6 @@ variable "private_subnet_address_prefix" {
   default     = "10.0.32.0/19"
 }
 
-variable "public_subnet_name" {
-  description = "Name of the public subnet"
-  type        = string
-  default     = "public-subnet"
-}
-
-variable "public_subnet_address_prefix" {
-  description = "Address prefix of the public subnet"
-  type        = string
-  default     = "10.0.1.0/24"
-}
-
 variable "database_subnet_name" {
   description = "Name of the database subnet"
   type        = string
